@@ -1,4 +1,4 @@
-import Component from 'react';
+import {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 
 export default class SearchForm extends Component{

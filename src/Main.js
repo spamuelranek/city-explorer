@@ -1,5 +1,6 @@
-import Component from "react";
+import {Component} from "react";
 import axios from "axios";
+import SearchForm from "./SearchForm";
 
 export default class Main extends Component{
     constructor(props){
