@@ -51,3 +51,9 @@
     - Start Time: 2:20pm
     - Finish Time: 3:43pm
     - Actual time needed to complete: 1hr 23mins
+
+- Name of Feature: Locations
+    - Estimate of time needed to complete: 30mins
+    - Start Time: 3:50pm
+    - Finish Time: 
+    - Actual time needed to complete: 
