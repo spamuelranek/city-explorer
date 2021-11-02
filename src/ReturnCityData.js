@@ -2,13 +2,7 @@ import { Component } from "react";
 import Card from "react-bootstrap/Card";
 
 export default class ReturnCityData extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            searchedCity:this.props.displayCard,
-            cityTitle:''
-        }
-    }
+
 
     changeName = () =>{
         let newName = this.props.city.display_name.split(',');
@@ -30,9 +24,6 @@ export default class ReturnCityData extends Component{
                             </Card.Text>
                             <Card.Text>
                                 Longitude:{this.props.city.lon}
-                            </Card.Text>
-                            <Card.Text>
-                                {this.state.searchedCity}
                             </Card.Text>
                         </Card.Body>
                 }
