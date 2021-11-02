@@ -15,10 +15,10 @@ export default class ReturnCityData extends Component{
     render(){
         return(
             <Card style={{width: '18rem'}}>
-                {this.props.displayCard&& 
+                {this.props.city&& 
                         <Card.Body>
                             <Card.Title>{this.props.city.display_name}</Card.Title>
-                            <img src = {this.props.map} alt ={this.props.city.display_name}/>
+                            <img src ={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=16&format=png`} alt ={this.props.city.display_name}/>
                             <Card.Text>
                                 Lat:{this.props.city.lat}
                             </Card.Text>

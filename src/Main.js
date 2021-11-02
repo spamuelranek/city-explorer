@@ -8,11 +8,7 @@ export default class Main extends Component{
         super(props);
         this.state ={
             cityValue: '',
-            searchedCity:{},
-            lat:'',
-            long:'',
-            mapImage:'',
-            showCity:false
+            searchedCity:null,
         }
     }
 
@@ -30,7 +26,7 @@ export default class Main extends Component{
     
     //create function that then uses new state of city to request from LocationIQ
     requestLocation = async () => {
-        let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&&q=${this.state.cityValue}&&format=json`;
+        let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
         
         //request from locationiq
         let response = await axios.get(url);
@@ -39,28 +35,8 @@ export default class Main extends Component{
         let returnedResponse = response.data[0];
 
         this.returnedLocation(returnedResponse);
-        console.log(this.state.searchedCity);
-        this.getLatandLong();
-
-        this.getMap();
     }
     
-    // captures the lat and log of the searched object to be processed for the map
-    getLatandLong = () => {
-        this.setState({lat:this.state.searchedCity.lat});
-        this.setState({long:this.state.searchedCity.lon});
-
-    }
-
-    //makes a request to the locationiq for a map picture
-    getMap = async() => {
-        let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&&center=${this.state.lat},${this.state.long}&&zoom=16&&format=png`
-        
-        let mapResponse = await axios.get(mapUrl);
-        
-        this.setState({mapImage:mapResponse.data})
-
-    }
 
     //sets the searchedCity state from the returned data
     returnedLocation = (returnedCities) =>{
