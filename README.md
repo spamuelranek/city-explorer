@@ -41,9 +41,15 @@
 
 ## Change Log:
 - 01-11-21 3:20pm created base file structure for city-explorer
+- 01-11-21 7:09pm finalizes flow for lat and longs
+- 01-11-21 9:09pm adds map to card
+
 
 ## Credit and Collaborations
 - Brandon Wolf -- Helped define data flow for project
+- Joseph Streifel -- Helped identify how to use the image src
+- Joseph Streifel -- Helped identify how the error response would come back as
+
 
 ## Time Management
 - Name of Feature: Set up Repository
@@ -51,3 +57,21 @@
     - Start Time: 2:20pm
     - Finish Time: 3:43pm
     - Actual time needed to complete: 1hr 23mins
+
+- Name of Feature: Locations
+    - Estimate of time needed to complete: 30mins
+    - Start Time: 3:50pm
+    - Finish Time: 7:06pm
+    - Actual time needed to complete: 3hrs with an hour dinner
+
+- Name of Feature: Map
+    - Estimate of time needed to complete: 1hr
+    - Start Time: 7:09pm
+    - Finish Time: 9:33pm
+    - Actual time needed to complete: 2hr 24min
+
+- Name of Feature: Error
+    - Estimate of time needed to complete: 1hr
+    - Start Time: 9:35pm
+    - Finish Time: 10:23pm
+    - Actual time needed to complete: 48min

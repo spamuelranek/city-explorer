@@ -24,6 +24,46 @@
   color: white;
 }
 
+body, main, footer, header{
+  text-align: center;
+  border: thin solid rgb(252, 173, 76);
+  border-radius: 7px;
+}
+
+body{
+  background-color: rgb(58, 116, 97);
+}
+
+header{
+  background-color: rgb(105, 208, 173);
+}
+
+main{
+  background-color: rgb(94, 182, 153);
+}
+
+footer{
+  background-color: rgb(68, 130, 109);
+}
+
+.form-label{
+  display: block;
+}
+
+.form-control{
+  display: inline-block;
+  width:60%;
+}
+
+/* This is what is changing the card */
+.card{
+  display: inline;
+}
+
+.card-body img{
+  width: 80%
+}
+
 .App-link {
   color: #61dafb;
 }
