@@ -47,6 +47,9 @@
 
 ## Credit and Collaborations
 - Brandon Wolf -- Helped define data flow for project
+- Joseph Streifel -- Helped identify how to use the image src
+- Joseph Streifel -- Helped identify how the error response would come back as
+
 
 ## Time Management
 - Name of Feature: Set up Repository
@@ -64,5 +67,11 @@
 - Name of Feature: Map
     - Estimate of time needed to complete: 1hr
     - Start Time: 7:09pm
-    - Finish Time: 
-    - Actual time needed to complete: 
+    - Finish Time: 9:33pm
+    - Actual time needed to complete: 2hr 24min
+
+- Name of Feature: Error
+    - Estimate of time needed to complete: 1hr
+    - Start Time: 9:35pm
+    - Finish Time: 10:23pm
+    - Actual time needed to complete: 48min

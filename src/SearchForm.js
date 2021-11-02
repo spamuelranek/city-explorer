@@ -8,7 +8,6 @@ export default class SearchForm extends Component{
     //passes the search value back to the Main component
     handleClick = () => {
         this.props.handleClick();
-        // reset();
 
     }
 
