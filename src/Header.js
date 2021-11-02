@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
             <header>
                 <h1>Welcome to City Explorer</h1>
-                <p>The gateway to cities of the US an Europe</p>
+                <p>The gateway to cities of the US</p>
             </header>
         )
     }
