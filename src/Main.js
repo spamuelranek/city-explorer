@@ -8,7 +8,11 @@ export default class Main extends Component{
         super(props);
         this.state ={
             cityValue: '',
-            searchedCity:{}
+            searchedCity:{},
+            lat:'',
+            long:'',
+            mapImage:'',
+            showCity:false
         }
     }
 
@@ -18,27 +22,46 @@ export default class Main extends Component{
 
     //create function to pass to the form component
     // needs to capture value of input form and set the state of the main component    
-    handleClick = (city) =>{
-        // console.log(city);
-        // let capturedCity = city;
-        // this.setState({cityValue: capturedCity})
-        console.log(this.state.cityValue);
+    handleClick = () =>{
         this.requestLocation();
+        this.setState({showCity:true});
+
     }
     
     //create function that then uses new state of city to request from LocationIQ
     requestLocation = async () => {
         let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&&q=${this.state.cityValue}&&format=json`;
         
-        let response = await axios.get(url)
+        //request from locationiq
+        let response = await axios.get(url);
         
+        //captured response object from array response
         let returnedResponse = response.data[0];
-        console.log(response.data);
-        console.log(response.data[0]);
+
         this.returnedLocation(returnedResponse);
         console.log(this.state.searchedCity);
+        this.getLatandLong();
+
+        this.getMap();
     }
     
+    // captures the lat and log of the searched object to be processed for the map
+    getLatandLong = () => {
+        this.setState({lat:this.state.searchedCity.lat});
+        this.setState({long:this.state.searchedCity.lon});
+
+    }
+
+    //makes a request to the locationiq for a map picture
+    getMap = async() => {
+        let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&&center=${this.state.lat},${this.state.long}&&zoom=16&&format=png`
+        
+        let mapResponse = await axios.get(mapUrl);
+        
+        this.setState({mapImage:mapResponse.data})
+
+    }
+
     //sets the searchedCity state from the returned data
     returnedLocation = (returnedCities) =>{
         this.setState({searchedCity:returnedCities});
@@ -48,7 +71,7 @@ export default class Main extends Component{
         return(
             <main>
                 <SearchForm handleClick = {this.handleClick} handleOnChange ={this.onChangeOfInput} input ={this.state.cityValue}/>
-                <ReturnCityData city = {this.state.searchedCity}/>
+                <ReturnCityData displayCard = {this.state.lat} city = {this.state.searchedCity} map = {this.state.mapImage}/>
             </main>
 
         )

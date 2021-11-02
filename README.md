@@ -41,6 +41,8 @@
 
 ## Change Log:
 - 01-11-21 3:20pm created base file structure for city-explorer
+- 01-11-21 7:09pm finalizes flow for lat and longs
+
 
 ## Credit and Collaborations
 - Brandon Wolf -- Helped define data flow for project
@@ -55,5 +57,11 @@
 - Name of Feature: Locations
     - Estimate of time needed to complete: 30mins
     - Start Time: 3:50pm
+    - Finish Time: 7:06pm
+    - Actual time needed to complete: 3hrs with an hour dinner
+
+- Name of Feature: Map
+    - Estimate of time needed to complete: 1hr
+    - Start Time: 7:09pm
     - Finish Time: 
     - Actual time needed to complete: 

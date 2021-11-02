@@ -5,7 +5,7 @@ export default class ReturnCityData extends Component{
     constructor(props){
         super(props)
         this.state = {
-            searchedCity:this.props.city,
+            searchedCity:this.props.displayCard,
             cityTitle:''
         }
     }
@@ -18,22 +18,26 @@ export default class ReturnCityData extends Component{
         
     }
 
-
-
-
     render(){
         return(
             <Card style={{width: '18rem'}}>
-                <Card.Body>
-                    <Card.Title>{this.props.city.display_name}</Card.Title>
-                    <Card.Text>
-                        Lat:{this.props.city.lat}
-                    </Card.Text>
-                    <Card.Text>
-                        Longitude:{this.props.city.lon}
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+                {this.props.displayCard&& 
+                        <Card.Body>
+                            <Card.Title>{this.props.city.display_name}</Card.Title>
+                            <img src = {this.props.map} alt ={this.props.city.display_name}/>
+                            <Card.Text>
+                                Lat:{this.props.city.lat}
+                            </Card.Text>
+                            <Card.Text>
+                                Longitude:{this.props.city.lon}
+                            </Card.Text>
+                            <Card.Text>
+                                {this.state.searchedCity}
+                            </Card.Text>
+                        </Card.Body>
+                }
+                </Card>
+
         )
 
     }
