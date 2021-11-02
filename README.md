@@ -42,6 +42,7 @@
 ## Change Log:
 - 01-11-21 3:20pm created base file structure for city-explorer
 - 01-11-21 7:09pm finalizes flow for lat and longs
+- 01-11-21 9:09pm adds map to card
 
 
 ## Credit and Collaborations

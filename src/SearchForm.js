@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
 
 export default class SearchForm extends Component{
 
@@ -7,6 +8,7 @@ export default class SearchForm extends Component{
     //passes the search value back to the Main component
     handleClick = () => {
         this.props.handleClick();
+        // reset();
 
     }
 
@@ -17,9 +19,13 @@ export default class SearchForm extends Component{
     render(){
         return(
             <div>
-                <input onChange = {this.handleInputChange} value = {this.props.input}/>
-                <p>{this.props.input}</p>
-                <Button variant ="dark" onClick ={this.handleClick}>Explore!</Button>
+                <Form>
+                    <Form.Group>
+                        <Form.Label>Select a City</Form.Label>
+                        <Form.Control type ="text" onChange = {this.handleInputChange} placeholder ="Enter City to Explore" value = {this.props.input}/>
+                    </Form.Group>
+                    <Button variant ="dark" onClick ={this.handleClick}>Explore!</Button>
+                </Form>
             </div>
         )
     }
