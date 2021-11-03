@@ -55,7 +55,7 @@ export default class Main extends Component{
         let cityName = this.manipulateDiplayName(this.state.searchedCity.display_name);
 
 
-        try{
+
             let url = `http://localhost:3001/weather?city_name=${cityName}&lat=${this.state.searchedCity.lat}&lon=${this.state.searchedCity.lon}`;
     
             let response = await axios.get(url);
@@ -68,15 +68,8 @@ export default class Main extends Component{
     
             console.log(this.state.forecast);
         }
-        catch (e){
-            if(e){
-                let modifiedResponse = e.response.status;
-                console.log(modifiedResponse);
-                this.setState({error: true});
-                this.setState({errorStatus:modifiedResponse});
-            }
-        }
-    }
+
+
 
     // this will make the name work for the search query
     manipulateDiplayName = (displayName) => {

@@ -64,6 +64,7 @@ footer{
 /* This is what is changing the card */
 .card{
   display: inline;
+  background-color: rgb(68, 130, 109);
 }
 
 .card-body img{
