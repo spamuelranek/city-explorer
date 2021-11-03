@@ -13,6 +13,7 @@ export default class Main extends Component{
             searchedCity:null,
             error: false,
             errorStatus: '',
+            forecast:[]
         }
     }
 
@@ -61,10 +62,11 @@ export default class Main extends Component{
 
         console.log(response.data);
 
-        this.setState({...this.state.searchedCity,forecast:response})
+        let forecastData = response.data
 
-        console.log(this.state.searchedCity);
+        this.setState({forecast:forecastData})
 
+        console.log(this.state.forecast);
     }
 
     // this will make the name work for the search query
@@ -92,7 +94,7 @@ export default class Main extends Component{
                 <ErrorPopUp closeModal = {this.closeErrorModal} errorStatus={this.state.errorStatus} show={this.state.error}/>
                 <SearchForm handleClick = {this.handleClick} handleOnChange ={this.onChangeOfInput} input ={this.state.cityValue}/>
                 <ReturnCityData displayCard = {this.state.lat} city = {this.state.searchedCity} map = {this.state.mapImage}/>
-                <Weather city = {this.state.searchedCity}/>
+                <Weather forecast = {this.state.forecast}/>
             </main>
 
         )
