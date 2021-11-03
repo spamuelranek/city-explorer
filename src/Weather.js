@@ -3,26 +3,17 @@ import Card from 'react-bootstrap/Card';
 
 export default class Weather extends Component{
 
-    cardCreation = (element) => {
-        <Card style = {{ width: '18rem'}}>
-            <Card.Body>
-                <Card.Title>{element.date}</Card.Title>
-                <Card.Text>{element.description}</Card.Text>
-            </Card.Body>
-        </Card>
-    }
-
     render(){
         return(
-            <div>
+            <div className="forecastCards">
                 {this.props.forecast.map(element =>{
                     return (
-                     <Card style = {{ width: '18rem'}}>
-                     <Card.Body>
-                         <Card.Title>{element.date}</Card.Title>
-                         <Card.Text>{element.description}</Card.Text>
-                     </Card.Body>
-                 </Card>
+                        <Card key = {element.date}>
+                            <Card.Body>
+                                <Card.Title>{element.date}</Card.Title>
+                                <Card.Text>{element.description}</Card.Text>
+                            </Card.Body>
+                        </Card>
                     )
                 })
             }

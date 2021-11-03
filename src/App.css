@@ -40,6 +40,12 @@ header{
 
 main{
   background-color: rgb(94, 182, 153);
+  vertical-align: middle;
+}
+
+.forecastCards{
+  display:inline-block;
+  background-color: rgb(94, 182, 153);
 }
 
 footer{
