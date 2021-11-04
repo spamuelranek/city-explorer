@@ -1,7 +1,6 @@
 import { Component } from "react";
 // import Card from 'react-bootstrap/Card';
-// import Row from "react-bootstrap/Row";
-// import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
 import Movie from './Movie'
 
 export default class Movies extends Component{
@@ -10,8 +9,10 @@ export default class Movies extends Component{
 
         return(
             <div className="movieCards">
-                {this.props.movies && this.props.movies.map(element => <Movie movies = {element}/>)}
-             </div>
+                <Row xs={1} sm ={2} className="movies">
+                        {this.props.movies && this.props.movies.map(element => <Movie movies = {element}/>)}
+                </Row>
+            </div>
 
         )
         
