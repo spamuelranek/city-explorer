@@ -8,12 +8,12 @@ export default class ReturnCityData extends Component{
         let newName = this.props.city.display_name.split(',');
         let cityName = newName[0];
         console.log(cityName);
-        this.setState({cityTitle: cityName});
+        return cityName;
         
     }
 
     createURL = () =>{
-        let url = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=12&format=png`;
+        let url = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=10&format=png`;
 
 
         return url;
@@ -24,7 +24,7 @@ export default class ReturnCityData extends Component{
             <Card>
                 {this.props.city&& 
                         <Card.Body>
-                            <Card.Title>{this.props.city.display_name}</Card.Title>
+                            <Card.Title>{this.changeName()}</Card.Title>
                             <img src={this.createURL()} alt ={this.props.city.display_name}/>
                             <Card.Text>
                                 Lat:{this.props.city.lat}

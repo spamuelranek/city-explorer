@@ -60,10 +60,15 @@ footer{
   width:60%;
 }
 
+
 /* This is what is changing the card */
 .card{
   background-color: rgb(68, 130, 109);
 
+}
+
+.movieCards{
+  padding: auto;
 }
 
 .card-body img{
