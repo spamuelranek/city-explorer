@@ -63,7 +63,7 @@ export default class Main extends Component{
 
         try{
             //create url from the searched city
-            let url = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.searchedCity.lat}&lon=${this.state.searchedCity.lon}`;
+            let url = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${this.state.searchedCity.lat}&lon=${this.state.searchedCity.lon}`;
         
             //send the request to the server
             let response = await axios.get(url);
@@ -87,7 +87,7 @@ export default class Main extends Component{
 
         try{
             //create url from the searched city
-            let url = `${process.env.REACT_APP_SERVER}/movies?keyword=${this.state.cityValue}`;
+            let url = `${process.env.REACT_APP_SERVER_URL}/movies?keyword=${this.state.cityValue}`;
         
             //send the request to the server
             let response = await axios.get(url);
