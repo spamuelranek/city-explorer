@@ -4,7 +4,7 @@ import SearchForm from "./SearchForm";
 import ReturnCityData from "./ReturnCityData";
 import ErrorPopUp from "./ErrorPopUP";
 import Weather from "./Weather";
-import Movie from "./Movie";
+import Movies from "./Movies";
 
 export default class Main extends Component{
     constructor(props){
@@ -120,7 +120,7 @@ export default class Main extends Component{
                 <SearchForm handleClick = {this.handleClick} handleOnChange ={this.onChangeOfInput} input ={this.state.cityValue}/>
                 {this.state.forecast && <ReturnCityData displayCard = {this.state.lat} city = {this.state.searchedCity}/>}
                 {this.state.forecast && <Weather forecast = {this.state.forecast}/>}
-                {this.state.forecast && <Movie movies = {this.state.movies}/>}
+                {this.state.forecast && <Movies movies = {this.state.movies}/>}
             </main>
 
         )

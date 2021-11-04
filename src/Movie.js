@@ -5,26 +5,19 @@ import Col from 'react-bootstrap/Col';
 
 export default class Movie extends Component{
 
-    render() {
-
+    render(){
         return(
-            <div className="movieCards">
-                <Row xs ={1} md = {2} lg ={2} className="g-4">
-                    {this.props.movies && this.props.movies.map(element =>(
-                        <Col>
-                            <Card key = {element.title}>
-                                <Card.Body>
-                                    <Card.Title>{element.title}</Card.Title>
-                                    <img src = {element.image_url} alt ={element.title} />
-                                    <Card.Text>{element.overview}</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-             </div>
-
+            <Row xs ={1} md = {2} lg ={2} className="g-4">
+                <Col>
+                    <Card key = {this.props.movies.title}>
+                        <Card.Body>
+                            <Card.Title>{this.props.movies.title}</Card.Title>
+                            <img src = {this.props.movies.image_url} alt ={this.props.movies.title} />
+                            <Card.Text>{this.props.movies.overview}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
         )
-        
     }
 }
