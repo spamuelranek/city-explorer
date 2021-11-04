@@ -44,8 +44,7 @@ main{
 }
 
 .forecastCards .card{
-  display:inline;
-  background-color: rgb(94, 182, 153);
+  background-color: rgb(151, 201, 184);
 }
 
 footer{
@@ -63,8 +62,8 @@ footer{
 
 /* This is what is changing the card */
 .card{
-  display: inline;
   background-color: rgb(68, 130, 109);
+
 }
 
 .card-body img{

@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import ReturnCityData from "./ReturnCityData";
 import ErrorPopUp from "./ErrorPopUP";
 import Weather from "./Weather";
+import Movie from "./Movie";
 
 export default class Main extends Component{
     constructor(props){
@@ -13,7 +14,8 @@ export default class Main extends Component{
             searchedCity:null,
             error: false,
             errorStatus: '',
-            forecast:[]
+            forecast:[],
+            movies:[]
         }
     }
 
@@ -46,6 +48,7 @@ export default class Main extends Component{
             this.setState({searchedCity:returnedResponse});
             
             this.requestForecast();
+            this.requestMovies();
         } catch (e) {
             if(e){
                 console.log(e.response)
@@ -65,13 +68,35 @@ export default class Main extends Component{
             //send the request to the server
             let response = await axios.get(url);
         
-            console.log(response.data);
-        
             let forecastData = response.data
         
             this.setState({forecast:forecastData})
         
             console.log(this.state.forecast);
+
+        }
+        catch(e){
+            if(e){
+                console.error('something went wrong');
+            }
+        }
+    }
+
+    requestMovies = async() =>{
+
+
+        try{
+            //create url from the searched city
+            let url = `http://localhost:3001/movies?keyword=${this.state.cityValue}`;
+        
+            //send the request to the server
+            let response = await axios.get(url);
+          
+            let movieArray = response.data
+        
+            this.setState({movies:movieArray})
+        
+            console.log(this.state.movies);
 
         }
         catch(e){
@@ -94,6 +119,7 @@ export default class Main extends Component{
                 <SearchForm handleClick = {this.handleClick} handleOnChange ={this.onChangeOfInput} input ={this.state.cityValue}/>
                 {this.state.forecast && <ReturnCityData displayCard = {this.state.lat} city = {this.state.searchedCity}/>}
                 {this.state.forecast && <Weather forecast = {this.state.forecast}/>}
+                {this.state.forecast && <Movie movies = {this.state.movies}/>}
             </main>
 
         )
