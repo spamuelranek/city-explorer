@@ -12,13 +12,20 @@ export default class ReturnCityData extends Component{
         
     }
 
+    createURL = () =>{
+        let url = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=12&format=png`;
+
+
+        return url;
+    }
+
     render(){
         return(
             <Card>
                 {this.props.city&& 
                         <Card.Body>
                             <Card.Title>{this.props.city.display_name}</Card.Title>
-                            <img src ={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=16&format=png`} alt ={this.props.city.display_name}/>
+                            <img src={this.createURL()} alt ={this.props.city.display_name}/>
                             <Card.Text>
                                 Lat:{this.props.city.lat}
                             </Card.Text>

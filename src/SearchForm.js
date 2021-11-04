@@ -6,7 +6,8 @@ export default class SearchForm extends Component{
 
     //function for when the search button is clicked
     //passes the search value back to the Main component
-    handleClick = () => {
+    handleClick = (e) => {
+        e.preventDefault();
         this.props.handleClick();
 
     }

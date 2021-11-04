@@ -43,9 +43,8 @@ main{
   vertical-align: middle;
 }
 
-.forecastCards{
-  display:inline-block;
-  background-color: rgb(94, 182, 153);
+.forecastCards .card{
+  background-color: rgb(151, 201, 184);
 }
 
 footer{
@@ -53,7 +52,7 @@ footer{
 }
 
 .form-label{
-  display: block;
+  display: inline-block;
 }
 
 .form-control{
@@ -63,7 +62,8 @@ footer{
 
 /* This is what is changing the card */
 .card{
-  display: inline;
+  background-color: rgb(68, 130, 109);
+
 }
 
 .card-body img{
