@@ -68,8 +68,16 @@ export default class Main extends Component{
             
             //send the request to the server
             let response = await axios.get(url);
-        
-            let forecastData = response.data
+
+            console.log(response);
+            
+            let forecastData;
+            if(response.data.timestamp){
+                forecastData = response.data.data
+            } else{
+                forecastData = response.data
+            }
+            console.log(forecastData);
         
             this.setState({forecast:forecastData})
         
@@ -92,8 +100,15 @@ export default class Main extends Component{
             console.log(url);
             //send the request to the server
             let response = await axios.get(url);
+
+            let movieArray;
+            if(response.data.timestamp){
+                movieArray = response.data.data
+            } else{
+                movieArray = response.data
+            }
           
-            let movieArray = response.data
+            console.log(movieArray);
         
             this.setState({movies:movieArray})
         
