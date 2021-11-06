@@ -5,7 +5,7 @@ export default class Movie extends Component{
 
     render(){
         return(
-            <Card style ={{width:'18rem' }} key = {this.props.movies.title}>
+            <Card key = {this.props.movies.id} style ={{width:'18rem' }}>
                 <Card.Body>
                     <Card.Title>{this.props.movies.title}</Card.Title>
                     {(this.props.movies.image_url !== 'https://image.tmdb.org/t/p/w500null') && <img src = {this.props.movies.image_url} alt ={this.props.movies.title} />}
